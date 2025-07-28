@@ -1,9 +1,7 @@
 [build]
 publish = "site"
-command = """
-pip install -e . &&
-mkdocs build -d site
-"""
+command = "mkdocs build"
+
 # [build]
 # publish = "site"
 # command = "pip install -e . && gomplate -d adopters=./data/adopters.yaml -f templates/adopters.md -o docs/project/adopters.md && mkdocs build"
@@ -20,4 +18,4 @@ status = 404
 # command = "pip install -e . && mkdocs build"
 #
 # [context.deploy-preview]
-# command = "pip install -e . && mkdocs build"
+# command = "pip install -e . && mkdocs build"kkkkk
