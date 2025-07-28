@@ -1,0 +1,17 @@
+[build]
+publish = "site"
+command = "pip install -e . && gomplate -d adopters=./data/adopters.yaml -f templates/adopters.md -o docs/project/adopters.md && mkdocs build"
+
+[build.environment]
+PYTHON_VERSION = "3.11"
+
+[[redirects]]
+from = "/*"
+to = "/404.html"
+status = 404
+
+[context.production]
+command = "pip install -e . && mkdocs build"
+
+[context.deploy-preview]
+command = "pip install -e . && mkdocs build"
