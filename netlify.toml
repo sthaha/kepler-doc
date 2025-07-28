@@ -1,6 +1,9 @@
 [build]
-publish = "site"
-command = "mkdocs build"
+publish = "site/"
+command = """
+pip install hatch &&
+hatch run build
+"""
 
 # [build]
 # publish = "site"
@@ -9,10 +12,10 @@ command = "mkdocs build"
 [build.environment]
 PYTHON_VERSION = "3.11"
 
-[[redirects]]
-from = "/*"
-to = "/404.html"
-status = 404
+# [[redirects]]
+# from = "/*"
+# to = "/404.html"
+# status = 404
 
 # [context.production]
 # command = "pip install -e . && mkdocs build"
