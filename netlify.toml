@@ -1,7 +1,7 @@
 [build]
 publish = "site/"
 command = """
-pip install hatch &&
+pip3 install hatch &&
 hatch run build
 """
 
