@@ -1,9 +1,9 @@
 [build]
 publish = "site/"
 command = """
-python -m pip install --upgrade pip &&
+python --version &&  which python &&
 python -m pip install hatch &&
-hatch run build
+python -m hatch run build
 """
 
 # [build]
