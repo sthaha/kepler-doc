@@ -1,22 +1,23 @@
 [build]
 publish = "site/"
 command = """
-python --version &&  which python &&
+echo $PATH &&
+export PATH="$PATH:~/.local/bin &&" &&
 python -m pip install hatch &&
-python -m hatch run build
+hatch run build
 """
 
 # [build]
 # publish = "site"
 # command = "pip install -e . && gomplate -d adopters=./data/adopters.yaml -f templates/adopters.md -o docs/project/adopters.md && mkdocs build"
 
-# [build.environment]
-# PYTHON_VERSION = "3.11"
+[build.environment]
+PYTHON_VERSION = "3.12"
 
-# [[redirects]]
-# from = "/*"
-# to = "/404.html"
-# status = 404
+[[redirects]]
+from = "/*"
+to = "/404.html"
+status = 404
 
 # [context.production]
 # command = "pip install -e . && mkdocs build"
